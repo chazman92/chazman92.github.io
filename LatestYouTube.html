@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Video Embed</title>
+</head>
+<body>
+    <div id="videoContainer"></div>
+
+    <script>
+        function fetchAndEmbedIframe() {
+            var webAppUrl = 'https://script.google.com/a/macros/chuckshoneybees.com/s/AKfycbyb1H6uvKSD3FCHgB5SlW0BJmAKCEJpXNVm2qTQHAgu0Fmi1C3F_3f4dHIboQhJ9dKr/exec';
+
+            fetch(webAppUrl)
+                .then(response => response.text())
+                .then(iframe => {
+                    var container = document.getElementById('videoContainer');
+                    container.innerHTML = iframe;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        // Call the function to fetch and embed the iframe
+        fetchAndEmbedIframe();
+    </script>
+</body>
+</html>
