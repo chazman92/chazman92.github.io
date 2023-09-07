@@ -14,16 +14,16 @@
 
             fetch(webAppUrl)
                 .then(response => response.text())
-                .then(iframeCode => {
+                .then(iframe => {
                     var container = document.getElementById('videoContainer');
-                    container.innerHTML = iframeCode;
+                    container.innerHTML = iframe;
                 })
                 .catch(error => console.error('Error:', error));
         }
 
         // Call the function to fetch and embed the iframe
         fetchAndEmbedIframe();
-
     </script>
 </body>
 </html>
+
