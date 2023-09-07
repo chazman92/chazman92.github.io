@@ -9,7 +9,20 @@
     <div id="videoContainer"></div>
 
     <script>
+        function fetchAndEmbedIframe() {
+            var webAppUrl = 'https://script.google.com/macros/s/AKfycbzThl9GcLlnl-dQZYupYLhu3tw6-nfMN2FgQSK09S6xpLdV38oHpA8T7k1KnOibzYP9/exec';
 
+            fetch(webAppUrl)
+                .then(response => response.text())
+                .then(iframe => {
+                    var container = document.getElementById('videoContainer');
+                    container.innerHTML = iframe;
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        // Call the function to fetch and embed the iframe
+        fetchAndEmbedIframe();
     </script>
 </body>
 </html>
