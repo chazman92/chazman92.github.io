@@ -11,8 +11,9 @@
     <script>
         function fetchAndEmbedIframe() {
             var webAppUrl = 'https://script.google.com/macros/s/AKfycbwzhTu8Wsio91Cd6yGLjoqWzA4v5xPZzocOa9T4mZXBStbhK8fz0Tq891b9WPoqNaS5/exec';
-
-            fetch(webAppUrl)
+            var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
+            
+            fetch(proxyUrl + webAppUrl)
                 .then(response => response.text())
                 .then(iframe => {
                 var container = document.getElementById('videoContainer'); // Replace 'videoContainer' with the ID of your desired container element
