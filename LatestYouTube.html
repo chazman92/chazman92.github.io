@@ -10,19 +10,20 @@
 
     <script>
         function fetchAndEmbedIframe() {
-            var webAppUrl = 'https://script.google.com/a/macros/chuckshoneybees.com/s/AKfycbyb1H6uvKSD3FCHgB5SlW0BJmAKCEJpXNVm2qTQHAgu0Fmi1C3F_3f4dHIboQhJ9dKr/exec';
+            var webAppUrl = 'YOUR_GAS_WEB_APP_URL';
 
             fetch(webAppUrl)
                 .then(response => response.text())
-                .then(iframe => {
+                .then(iframeCode => {
                     var container = document.getElementById('videoContainer');
-                    container.innerHTML = iframe;
+                    container.innerHTML = iframeCode;
                 })
                 .catch(error => console.error('Error:', error));
         }
 
         // Call the function to fetch and embed the iframe
         fetchAndEmbedIframe();
+
     </script>
 </body>
 </html>
