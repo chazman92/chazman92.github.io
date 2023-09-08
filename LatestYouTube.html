@@ -10,27 +10,20 @@
 
     <script>
         function fetchAndEmbedIframe() {
+            var webAppUrl = 'https://script.google.com/macros/s/AKfycby-puQnEK8Q2QXEoDouIVV4vvLSMspGMJT4cJoR7SXcA4ar5KIellYSQiwZhwLZ12ms/exec';
 
-            var webAppUrl = 'https://script.google.com/macros/s/AKfycbwPdxz27d-gPXbcjmEKzPQGCIR514hNNb5mzOn_XRtHQpG-ZVfYipgnQm1qFq2vURGL/exec';
-            var proxyUrl = 'https://cors-anywhere.herokuapp.com/';
-
-            fetch(proxyUrl + webAppUrl,
-            {
-                method: 'GET',
-                headers: {
-                    'x-requested-with': 'XMLHttpRequest'
-                }
-            })
+            fetch(webAppUrl)
                 .then(response => response.text())
                 .then(iframe => {
-                var container = document.getElementById('videoContainer'); // Replace 'videoContainer' with the ID of your desired container element
-                container.innerHTML = iframe;
+                    var container = document.getElementById('videoContainer');
+                    container.innerHTML = iframe;
                 })
                 .catch(error => console.error('Error:', error));
-            }
+        }
 
-            // Call the function to fetch and embed the iframe
-            fetchAndEmbedIframe();
+        // Call the function to fetch and embed the iframe
+        fetchAndEmbedIframe();
+
 
     </script>
 </body>
